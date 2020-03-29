@@ -90,24 +90,24 @@ float alphaUnfocussed = 0.8; //< alpha value used when the focus is lost
 // One Half Dark Colors (Modified)
 static const char *colorname[] = {
 	/* 8 normal colors */
-    "#282c34",
-    "#d05c65",
-    "#88b369",
-    "#d5b06b",
-    "#519fdf",
-    "#b668cd",
-    "#46a6b2",
-    "#8a93a4",
+    "#282c34", // Black
+    "#d05c65", // Red
+    "#88b369", // Green
+    "#d5b06b", // Yellow
+    "#519fdf", // Blue
+    "#b668cd", // Magenta
+    "#46a6b2", // Cyan
+    "#8a93a4", // Gray
 
 	/* 8 bright colors */
-    "#5a6374",
-    "#f07c85",
-    "#a8d389",
-    "#f5d08b",
-    "#71bfff",
-    "#d688ed",
-    "#66c6d2",
-    "#dcdfe4",
+    "#5a6374", // Gray
+    "#f07c85", // L. Red
+    "#a8d389", // L. Green
+    "#f5d08b", // L. Yellow
+    "#71bfff", // L. Blue
+    "#d688ed", // L. Magenta
+    "#66c6d2", // L. Cyan
+    "#dcdfe4", // White
 
 	[255] = 0,
 
