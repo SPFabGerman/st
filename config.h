@@ -27,11 +27,7 @@ char *vtiden = "\033[?6c";
 static float cwscale = 1.0;
 static float chscale = 1.0;
 
-/*
- * word delimiter string
- *
- * More advanced example: L" `'\"()[]{}"
- */
+/* word delimiter string */
 wchar_t *worddelimiters = L" `'\"()[]{}!$%&/=?´\\+*~#-_.,;:<>|^@";
 
 /* selection timeouts (in milliseconds) */
@@ -86,7 +82,7 @@ unsigned int tabspaces = 8;
 float alpha = 0.925;           //< alpha value used when the window is focused.
 float alphaUnfocussed = 0.8; //< alpha value used when the focus is lost
 
-/* Terminal colors (16 first used in escape sequence) */
+/* === Terminal colors === (16 first used in escape sequence) */
 // One Half Dark Colors (Modified)
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -179,7 +175,7 @@ static MouseShortcut mshortcuts[] = {
 	{ XK_ANY_MOD,           Button3, selpaste,       {.i = 0},      1 },
 };
 
-/* Internal keyboard shortcuts. */
+/* === Internal keyboard shortcuts. === */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
@@ -191,9 +187,13 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 
     // Zoom
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_Prior /* PageUP */,      zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Next  /* PageDown */,    zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Home  /* Pos1 */,        zoomreset,      {.f =  0} },
+
+	{ TERMMOD,              XK_asterisk /* + */,     zoom,           {.f = +1} },
+	{ TERMMOD,              XK_underscore /* - */,   zoom,           {.f = -1} },
+	{ TERMMOD,              XK_equal /* = */,        zoomreset,      {.f =  0} },
 
     // Copy and Paste
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
