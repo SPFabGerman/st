@@ -127,3 +127,6 @@ extern unsigned int defaultfg;
 extern unsigned int defaultbg;
 extern float alpha;
 extern float alphaUnfocussed;
+extern char *pre_cmd[];
+extern int pre_cmd_block;
+

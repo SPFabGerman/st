@@ -22,6 +22,13 @@ char *utmp = NULL;
 char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
+/* Programm to be run at startup.
+ * (Before the Shell even starts or the -e Option.) 
+ * Cannot be overriden by any option. */
+char *pre_cmd[] = { NULL };
+/* If the Programm should block the shell. */
+int pre_cmd_block = 1;
+
 /* identification sequence returned in DA and DECID */
 char *vtiden = "\033[?6c";
 
