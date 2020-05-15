@@ -122,3 +122,5 @@ extern char *termname;
 extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
+extern char *pre_cmd[];
+extern int pre_cmd_block;

@@ -668,6 +668,7 @@ execsh(char *cmd, char **args)
 {
 	char *sh, *prog, *arg;
 	const struct passwd *pw;
+	pid_t pre_cmd_pid;
 
 	errno = 0;
 	if ((pw = getpwuid(getuid())) == NULL) {
@@ -711,6 +712,15 @@ execsh(char *cmd, char **args)
 	signal(SIGTERM, SIG_DFL);
 	signal(SIGALRM, SIG_DFL);
 
+	/* Run pre_cmd (if defined) */
+	if (pre_cmd[0] != NULL) {
+		if ((pre_cmd_pid = fork()) == 0) {
+			execvp(pre_cmd[0], pre_cmd);
+		}
+		if (pre_cmd_block) {
+			waitpid(pre_cmd_pid, NULL, 0);
+		}
+	}
 	execvp(prog, args);
 	_exit(1);
 }
