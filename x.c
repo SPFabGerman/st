@@ -1470,10 +1470,12 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
 		xclear(0, (y == 0)? 0 : winy, win.hborderpx,
 			winy + win.ch +
 			((winy + win.ch >= win.vborderpx + win.th)? win.h : 0));
+		XftDrawRect(xw.draw, bg, 0, winy, win.hborderpx, win.ch);
 	}
 	if (winx + width >= win.hborderpx + win.tw) {
 		xclear(winx + width, (y == 0)? 0 : winy, win.w,
 			((winy + win.ch >= win.vborderpx + win.th)? win.h : (winy + win.ch)));
+		XftDrawRect(xw.draw, bg, winx + width, winy, win.w - winx - width, win.ch);
 	}
 	if (y == 0)
 		xclear(winx, 0, winx + width, win.vborderpx);
