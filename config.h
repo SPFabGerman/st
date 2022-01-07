@@ -128,7 +128,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc", // Default Cursor
 	"#555555", // Default Reverse Cursor
-	"#282c34", // Default BG, to make opacity
+	"#282828", // Default BG, to make opacity
 };
 
 
